@@ -1,5 +1,31 @@
 package main
 
+func main() {
+    // 1. Setup HSM connection
+    hsm, err := NewHSMConnection()
+    if err != nil {
+        // Handle error
+    }
+
+    // 2. Generate Symmetric Key
+    key, err := hsm.GenerateSymmetricKey()
+    if err != nil {
+        // Handle error
+    }
+
+    // 3. Wrap the Key with CMS
+    wrappedKey, err := WrapWithCMS(key)
+    if err != nil {
+        // Handle error
+    }
+
+    // 4. Deliver the Key
+    err = DeliverKey("your_destination_here", wrappedKey)
+    if err != nil {
+        // Handle error
+    }
+}
+
 import (
 	"fmt"
 	// Other necessary imports will go here
