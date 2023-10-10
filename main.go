@@ -30,3 +30,35 @@ func main() {
 	cert := generateClientCertificate()
 	fmt.Println(cert)
 }
+
+type RelyingParty struct {
+	AuthorityKeyIdentifier string
+	SubjectKeyIdentifier   string
+	CRLDistributionPoints  string
+	// Other fields can be added as needed
+}
+
+func generateRelyingParty() RelyingParty {
+	// Placeholder
+	return RelyingParty{
+		AuthorityKeyIdentifier: "AuthorityKeyIdentifierValue",
+		SubjectKeyIdentifier:   "SubjectKeyIdentifierValue",
+		CRLDistributionPoints:  "CRLDistributionPointsValue",
+	}
+}
+
+type CRL struct {
+	AuthorityKeyIdentifier   string
+	CRLNumber                string
+	IssuingDistributionPoint string
+	// Other fields can be added as needed
+}
+
+func generateCRL() CRL {
+	// Placeholder
+	return CRL{
+		AuthorityKeyIdentifier:   "AuthorityKeyIdentifierValue",
+		CRLNumber:                "CRLNumberValue",
+		IssuingDistributionPoint: "IssuingDistributionPointValue",
+	}
+}
